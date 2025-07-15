@@ -119,7 +119,7 @@ public class Main {
                             System.out.println("Pirata " + (i+1) + ": " + pirata_D[i].nome);
                         }
                         int escolha = scanner.nextInt();
-                        
+
                     }
                     break;
 
