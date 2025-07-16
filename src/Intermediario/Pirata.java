@@ -12,5 +12,6 @@ public class Pirata {
         System.out.println("Idade: " + idade);
         System.out.println("Habilidade: " + habilidade);
         System.out.println("Recompensa: " + recompensa);
+        System.out.println("----------------------------------------");
     }
 }

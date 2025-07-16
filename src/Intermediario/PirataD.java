@@ -6,7 +6,7 @@ public class PirataD extends Pirata{
 
     public void mostrarHabilidadeEspecial()
     {
-        System.out.println("Minha habilidade especial é: " + habilidade_especial);
+        System.out.println("Habilidade especial é: " + habilidade_especial);
     }
     public void mostrarInformacoes()
     {
@@ -15,5 +15,6 @@ public class PirataD extends Pirata{
         System.out.println("Habilidade: " + habilidade);
         System.out.println("Recompensa: " + recompensa);
         mostrarHabilidadeEspecial();
+        System.out.println("----------------------------------------");
     }
 }
