@@ -1,20 +1,17 @@
-package Intermediario;
+package Intermediario.Desafio3;
 
-public class PirataD extends Pirata{
+public class Pirata {
+    String nome;
+    String habilidade;
+    int idade;
+    long recompensa;
 
-    String habilidade_especial;
-
-    public void mostrarHabilidadeEspecial()
-    {
-        System.out.println("Habilidade especial é: " + habilidade_especial);
-    }
     public void mostrarInformacoes()
     {
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);
         System.out.println("Habilidade: " + habilidade);
         System.out.println("Recompensa: " + recompensa);
-        mostrarHabilidadeEspecial();
         System.out.println("----------------------------------------");
     }
 }

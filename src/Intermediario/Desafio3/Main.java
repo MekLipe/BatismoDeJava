@@ -1,16 +1,9 @@
-package Intermediario;
+package Intermediario.Desafio3;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
     {
-        /*
-        FamiliaD Luffy = new FamiliaD();
-        Luffy.nome = "Monkey D. Luffy";
-        Luffy.habilidade = "Hito Hito no mi Modelo Nika";
-        Luffy.idade = 19;
-        */
-
         int opcao = 0;
         int num_max = 3;
         int piratas_normais_cadastrados = 0;
