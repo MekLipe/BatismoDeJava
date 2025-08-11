@@ -24,7 +24,6 @@ public class PirataD extends Pirata {
         System.out.println("Habilidade: " + getHabilidade());
         System.out.println("Recompensa: " + getRecompensa());
         System.out.println("Habilidade especial: " + habilidade_especial);
-        mostrarHabilidadeEspecial();
         System.out.println("----------------------------------------");
     }
 

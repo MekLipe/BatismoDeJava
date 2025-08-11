@@ -14,7 +14,7 @@ public class Main {
 
         while (opcao != 5)
         {
-            System.out.println("================ Menu Pirata ================");
+            System.out.println("\n================ Menu Pirata ================");
             System.out.println("1. Cadastrar novo Pirata");
             System.out.println("2. Cadastrar novo D.");
             System.out.println("3. Listar  informações dos Piratas");
@@ -51,20 +51,20 @@ public class Main {
                 case 2:
                     if (lista_pirata.size() < num_max)
                 {
-                    System.out.println("\nDigite o nome do pirata D." + (lista_D.size() + 1) + ":");
+                    System.out.println("\nDigite o nome do pirata D. " + (lista_D.size() + 1) + ":");
                     String nome = scanner.nextLine();
-                    System.out.println("Digite a habilidade do pirata D." + (lista_D.size() + 1) + ":");
+                    System.out.println("Digite a habilidade do pirata D. " + (lista_D.size() + 1) + ":");
                     String habilidade = scanner.nextLine();
-                    System.out.println("Digite a idade do pirata D." + (lista_D.size() + 1) + ":");
+                    System.out.println("Digite a idade do pirata D. " + (lista_D.size() + 1) + ":");
                     int idade = scanner.nextInt();
-                    System.out.println("Digite a recompensa do pirata D." + (lista_D.size() + 1) + ":");
+                    System.out.println("Digite a recompensa do pirata D. " + (lista_D.size() + 1) + ":");
                     Long recompensa = scanner.nextLong();
                     scanner.nextLine(); // essa linha serve para o enter no scanner anterior nao ser consumido no buffer
                     System.out.println("Digite a habilidade especial do pirata D. " + (lista_D.size() + 1) + ":");
                     String habilidade_especial = scanner.nextLine();
                     PirataD pirataD = new PirataD(nome, habilidade, idade, recompensa, habilidade_especial);
                     lista_D.add(pirataD);
-                    System.out.println("D. adicionado com sucesso!");
+                    System.out.println(pirataD.getNome() + " adicionado com sucesso!");
                 }
                 else
                 {
@@ -78,7 +78,7 @@ public class Main {
 
                     if (lista_pirata.isEmpty())
                     {
-                        System.out.println("Nenhum pirata encontrado.");
+                        System.out.println("\nNenhum pirata encontrado.");
                     }
                     else
                     {
@@ -89,10 +89,10 @@ public class Main {
                     }
 
                     //Em seguida é impresso os D.
-                    System.out.println("------------- Lista dos D. -------------");
+                    System.out.println("\n------------- Lista dos D. -------------");
                     if (lista_D.isEmpty())
                     {
-                        System.out.println("Nenhum D. encontrado.");
+                        System.out.println("\nNenhum D. encontrado.");
                     }
                     else
                     {
@@ -106,16 +106,19 @@ public class Main {
                 case 4:
                     if (lista_D.isEmpty())
                     {
-                        System.out.println("Nenhum D. encontrado.\n");
+                        System.out.println("\nNenhum D. encontrado.");
                     }
                     else
                     {
-                        System.out.println("======= Lista dos D. =======");
-                        for (PirataD pirataD: lista_D)
+                        System.out.println("\n======= Lista dos D. =======");
+                        int i= 0;
+                        for (PirataD pirataD : lista_D)
                         {
-                            System.out.println("Pirata D. " + (lista_D.size() + 1) + ": " + pirataD.getNome());
+                            System.out.println((i+1) + " - " + pirataD.getNome());
+                            i++;
                         }
-                        System.out.println("Digite o numero de um D para alterar a habilidade: ");
+                        System.out.println("===========================");
+                        System.out.println("\nDigite o numero de um D para alterar a habilidade: ");
                         int escolha = scanner.nextInt();
                         scanner.nextLine();
 
@@ -123,7 +126,7 @@ public class Main {
                             PirataD pirataSelecionado = lista_D.get(escolha - 1);
 
                             System.out.println("Habilidade especial de " + pirataSelecionado.getNome() + ": " + pirataSelecionado.getHabilidade_especial());
-                            System.out.print("Insira a nova habilidade: ");
+                            System.out.print("Digite a nova habilidade: ");
                             pirataSelecionado.setHabilidade_especial(scanner.nextLine());
                             System.out.println("Habilidade atualizada com sucesso!");
                         } else {
