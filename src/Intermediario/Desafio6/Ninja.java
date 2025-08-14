@@ -12,12 +12,12 @@ public class Ninja {
     }
 
     void MostrarInformacoes(){
-        System.out.println("| Nome: " + getNome() + "| Idade: " + getIdade() + "| Aldeia: " + getAldeia());
+        System.out.println("| Nome: " + getNome() + "| Idade: " + getIdade() + " | Aldeia: " + getAldeia());
     }
 
     @Override
     public String toString(){
-        return "Ninja: " + nome + " | Idade: " + idade + " | Vila: " + aldeia;
+        return "\nNinja: " + nome + " | Idade: " + idade + " | Vila: " + aldeia;
     }
 
     public String getNome() {

@@ -1,5 +1,6 @@
 package Intermediario.Desafio6;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -13,8 +14,8 @@ public class Main {
         lista.add(new Ninja("Sasuke", 17, "Konoha"));
         lista.add(new Ninja("Sakura", 17, "Konoha"));
         lista.add(new Ninja("Kakashi", 30, "Konoha"));
-        lista.add(new Ninja("Gaara", 17, "Suna"));
-        lista.add(new Ninja("Rock Lee", 17, "Konoha"));
+        lista.add(new Ninja("Gaara", 20, "Suna"));
+        lista.add(new Ninja("Rock Lee", 19, "Konoha"));
         lista.add(new Ninja("Neji", 17, "Konoha"));
 
         do {
@@ -24,6 +25,7 @@ public class Main {
             System.out.println("3. Remover primeiro ninja");
             System.out.println("4. Acessar ninja por posição");
             System.out.println("5. Acessar ninja por nome");
+            System.out.println("6. Ordenar lista de ninjas");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             op = scanner.nextInt();
@@ -44,6 +46,7 @@ public class Main {
                     break;
                 case 5:
                     AcessarPeloNome(lista, scanner);
+                    break;
                 case 6:
                     OrdenarLista(lista, scanner);
                     break;
@@ -86,8 +89,8 @@ public class Main {
             System.out.println("Lista vazia, nenhum ninja para remover");
         }
         else {
-            lista.removeFirst();
             System.out.println("O primeiro ninja da lista: " + lista.getFirst() + ", foi removido");
+            lista.removeFirst();
             System.out.println(lista);
         }
     }
@@ -127,6 +130,35 @@ public class Main {
     }
 
     public static void OrdenarLista(LinkedList<Ninja> lista, Scanner scanner){
-
+        int opcao;
+        do
+        {
+            System.out.println("\nParâmetros de ordenação da lista");
+            System.out.println("1 - Ordenar por Nome");
+            System.out.println("2 - Ordenar por Idade");
+            System.out.println("3 - Ordenar por Aldeia");
+            System.out.println("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            switch (opcao) {
+                case 1:
+                    lista.sort(Comparator.comparing(Ninja::getNome));
+                    System.out.println("\n----------- Lista ordenada pelo Nome do ninja -----------");
+                    System.out.println(lista);
+                    break;
+                case 2:
+                    lista.sort(Comparator.comparing(Ninja::getIdade));
+                    System.out.println("\n----------- Lista ordenada pela Idade do ninja -----------");
+                    System.out.println(lista);
+                    break;
+                case 3:
+                    lista.sort(Comparator.comparing(Ninja::getAldeia));
+                    System.out.println("\n----------- Lista ordenada pela Aldeia ninja -----------");
+                    System.out.println(lista);
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+                }
+        } while(opcao < 1 || opcao > 3); // repete enquanto NÃO for 1, 2 ou 3
     }
 }
