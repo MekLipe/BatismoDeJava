@@ -42,4 +42,5 @@ public class MetodosFunção {
         System.out.println("Multiplicação: " + multiplicacao);
         System.out.println("Divisão: " + divisao);
     }
+
 }
